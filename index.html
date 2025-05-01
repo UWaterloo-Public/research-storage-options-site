@@ -1,164 +1,495 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta charset="UTF-8">
-  <title>Storage Solution Selector</title>
-  <script src="papaparse.min.js"></script>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; }
-    .container { display: flex; gap: 3rem; align-items: flex-start; }
-    .form-column { flex: 1; min-width: 300px; }
-    .solution-column { flex: 1; min-width: 300px; }
-    .question { margin-bottom: 1.5rem; }
-    .option { margin-left: 1rem; }
-    .solution-list h2 { margin-bottom: 0.5rem; }
-    .solution-item { padding: 0.25rem 0; }
-    .hidden { display: none; }
-    #resetBtn {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background: #ccc;
-      border: none;
-      cursor: pointer;
-    }
-    #resetBtn:hover {
-      background: #bbb;
-    }
-  </style>
-</head>
-<body>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Research Storage Options | University of Waterloo</title>
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<style>
+			:root {
+				--waterloo-gold: #fed34c;
+				--waterloo-black: #000000;
+				--waterloo-dark-gray: #333333;
+				--waterloo-light-gray: #f8f9fa;
+			}
 
-  <h1>Select Your Storage Requirements</h1>
-  <div class="container">
-    <div class="form-column">
-      <button id="resetBtn">Reset</button>
-      <div id="formContainer"><div class="question"><h3>What type of storage do you need?</h3><div><input type="radio" name="q0" value="Active with backups made" class="option"> <span>Active with backups made</span></div><div><input type="radio" name="q0" value="Back-up, my active copy is elsewhere" class="option"> <span>Back-up, my active copy is elsewhere</span></div><div><input type="radio" name="q0" value="Long-term storage with backups made" class="option"> <span>Long-term storage with backups made</span></div><div><input type="radio" name="q0" value="Open data sharing (public/published data access)" class="option"> <span>Open data sharing (public/published data access)</span></div></div><div class="question"><h3>Does your data need high availability through replication to a different location</h3><div><input type="radio" name="q1" value="Yes, I need multiple copies in different locations" class="option"> <span>Yes, I need multiple copies in different locations</span></div><div><input type="radio" name="q1" value="No" class="option"> <span>No</span></div></div><div class="question"><h3>What security classifciation does your data have?</h3><div><input type="radio" name="q2" value="Public" class="option"> <span>Public</span></div><div><input type="radio" name="q2" value="Confidential" class="option"> <span>Confidential</span></div><div><input type="radio" name="q2" value="Restricted" class="option"> <span>Restricted</span></div><div><input type="radio" name="q2" value="Highly restricted" class="option"> <span>Highly restricted</span></div></div><div class="question"><h3>Collaboration type?</h3><div><input type="radio" name="q3" value="No Collaboration" class="option"> <span>No Collaboration</span></div><div><input type="radio" name="q3" value="University of Waterloo affiliated entities&nbsp;&nbsp;(watiam cred)" class="option"> <span>University of Waterloo affiliated entities&nbsp;&nbsp;(watiam cred)</span></div><div><input type="radio" name="q3" value="NON-University of Waterloo affiliated entities with a sponsored account&nbsp;with MS licensing" class="option"> <span>NON-University of Waterloo affiliated entities with a sponsored account&nbsp;with MS licensing</span></div><div><input type="radio" name="q3" value="NON-University of Waterloo affiliated entities without a sponsored account" class="option"> <span>NON-University of Waterloo affiliated entities without a sponsored account</span></div></div><div class="question"><h3>How much storage do you need?</h3><div><input type="radio" name="q4" value="300 GB or less" class="option"> <span>300 GB or less</span></div><div><input type="radio" name="q4" value="300 GB to 5 TB" class="option"> <span>300 GB to 5 TB</span></div><div><input type="radio" name="q4" value="5 Tb to 25 TB" class="option"> <span>5 Tb to 25 TB</span></div><div><input type="radio" name="q4" value="Over 25 TB" class="option"> <span>Over 25 TB</span></div></div><div class="question"><h3>Will you be doing computing or directly running applications or databases on this storage?</h3><div><input type="radio" name="q5" value="Yes, applications will be running directly from this storage." class="option"> <span>Yes, applications will be running directly from this storage.</span></div><div><input type="radio" name="q5" value="No, applications or databases will not be running directly on this storage." class="option"> <span>No, applications or databases will not be running directly on this storage.</span></div></div><div class="question"><h3>Do you have access to an account to pay for charged storage?</h3><div><input type="radio" name="q6" value="Yes, I have an account or will be able to get one" class="option"> <span>Yes, I have an account or will be able to get one</span></div><div><input type="radio" name="q6" value="No, I am interested in free or no-charge options" class="option"> <span>No, I am interested in free or no-charge options</span></div></div><div class="question"><h3>Are you in any of these faculties</h3><div><input type="radio" name="q7" value="Math" class="option"> <span>Math</span></div><div><input type="radio" name="q7" value="Computer Science" class="option"> <span>Computer Science</span></div><div><input type="radio" name="q7" value="Engineering" class="option"> <span>Engineering</span></div><div><input type="radio" name="q7" value="Health" class="option"> <span>Health</span></div><div><input type="radio" name="q7" value="Environment" class="option"> <span>Environment</span></div><div><input type="radio" name="q7" value="Art" class="option"> <span>Art</span></div><div><input type="radio" name="q7" value="Science" class="option"> <span>Science</span></div></div></div>
-    </div>
+			body {
+				font-family: "Segoe UI", Arial, sans-serif;
+				padding: 0;
+				margin: 0;
+				background-color: #ffffff;
+				color: var(--waterloo-dark-gray);
+			}
 
-    <div class="solution-column">
-      <div class="solution-list">
-        <h2>Matching Solutions:</h2>
-        <ul id="results"><li class="solution-item" data-solution="Performance campus storage">Performance campus storage</li><li class="solution-item" data-solution="Proposed capacity campus storage ">Proposed capacity campus storage </li><li class="solution-item" data-solution="OneDrive ">OneDrive </li><li class="solution-item" data-solution="SharePoint ">SharePoint </li><li class="solution-item" data-solution="MS Teams">MS Teams</li><li class="solution-item" data-solution="Public cloud (AWS, GCP, MS Azure)">Public cloud (AWS, GCP, MS Azure)</li><li class="solution-item" data-solution="Public cloud (UW MS Azure Storage) ">Public cloud (UW MS Azure Storage) </li><li class="solution-item" data-solution="Public cloud - Wasabi">Public cloud - Wasabi</li><li class="solution-item" data-solution="UW Dataverse (Borealis)">UW Dataverse (Borealis)</li><li class="solution-item" data-solution="Federated Research Data Repository (FRDR)  ">Federated Research Data Repository (FRDR)  </li><li class="solution-item" data-solution="Math NetApp Storage">Math NetApp Storage</li><li class="solution-item" data-solution="Math QNAP Storage">Math QNAP Storage</li><li class="solution-item" data-solution="CSCF storage">CSCF storage</li><li class="solution-item" data-solution="Engineering storage">Engineering storage</li><li class="solution-item" data-solution="Health Research Drive storage">Health Research Drive storage</li><li class="solution-item" data-solution="HealthCloud Storage">HealthCloud Storage</li><li class="solution-item" data-solution="Environment Storage">Environment Storage</li><li class="solution-item" data-solution="Art Storage">Art Storage</li><li class="solution-item" data-solution="Science Storage">Science Storage</li></ul>
-      </div>
-    </div>
-  </div>
+			.waterloo-header {
+				background-color: var(--waterloo-black);
+				color: white;
+				padding: 1rem 0;
+			}
 
-  <script>
-    const CSV_URL = "./storage.csv"; // Update path if necessary
+			.waterloo-logo {
+				height: 40px;
+			}
 
-    let questions = {};
-    let optionIndex = {};
-    let matrix = {};
-    let solutions = [];
+			.waterloo-nav {
+				font-size: 0.9rem;
+				font-weight: 500;
+			}
 
-    fetch(CSV_URL)
-      .then(response => response.text())
-      .then(csvText => {
-        Papa.parse(csvText, {
-          header: true,
-          skipEmptyLines: true,
-          complete: function(results) {
-            processCSV(results.data);
-          }
-        });
-      })
-      .catch(error => {
-        document.body.innerHTML = `<p style="color:red">Failed to load CSV: ${error.message}</p>`;
-      });
+			.waterloo-nav a {
+				color: white;
+				text-decoration: none;
+				padding: 0.5rem 1rem;
+			}
 
-    function processCSV(data) {
-      const formContainer = document.getElementById("formContainer");
+			.waterloo-nav a:hover {
+				text-decoration: underline;
+			}
 
-      // Extract questions and options
-      const qMap = {};
-      data.forEach((row, i) => {
-        const q = row["Question"]?.trim();
-        const opt = row["Options"]?.trim();
-        if (!opt) return;
+			.search-box {
+				border: 1px solid #555;
+				border-radius: 2px;
+				background-color: transparent;
+				padding: 0.25rem 0.5rem;
+				color: white;
+				width: 200px;
+			}
 
-        if (!qMap[q]) qMap[q] = [];
-        qMap[q].push(opt);
-        optionIndex[opt] = i;
-      });
+			.search-box:focus {
+				outline: none;
+				border-color: var(--waterloo-gold);
+			}
 
-      questions = qMap;
-      solutions = Object.keys(data[0]).slice(2); // All columns after "Options"
+			.search-btn {
+				background: transparent;
+				border: none;
+				color: white;
+			}
 
-      // Build matrix
-      for (const [opt, rowIdx] of Object.entries(optionIndex)) {
-        matrix[opt] = {};
-        solutions.forEach(sol => {
-          matrix[opt][sol] = parseInt(data[rowIdx][sol]) || 0;
-        });
-      }
+			.hero-section {
+				background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+					url("https://uwaterloo.ca/brand/sites/ca.brand/files/styles/body-850px-wide/public/uploads/images/uw-research-banner.jpg");
+				background-size: cover;
+				background-position: center;
+				color: white;
+				padding: 4rem 0;
+				text-align: left;
+			}
 
-      // Build form
-      let qNum = 0;
-      for (const [qText, opts] of Object.entries(questions)) {
-        const div = document.createElement("div");
-        div.className = "question";
+			.hero-section h1 {
+				font-weight: 700;
+				font-size: 2.5rem;
+				margin-bottom: 1rem;
+			}
 
-        const label = document.createElement("h3");
-        label.textContent = qText;
-        div.appendChild(label);
+			.hero-section p {
+				font-size: 1.2rem;
+				max-width: 600px;
+			}
 
-        opts.forEach(opt => {
-          const input = document.createElement("input");
-          input.type = "radio";
-          input.name = "q" + qNum;
-          input.value = opt;
-          input.className = "option";
-          input.addEventListener("change", updateResults);
+			.waterloo-btn {
+				background-color: var(--waterloo-gold);
+				color: var(--waterloo-black);
+				border: none;
+				padding: 0.5rem 1.5rem;
+				font-weight: 600;
+				border-radius: 0;
+				text-transform: uppercase;
+				font-size: 0.9rem;
+				letter-spacing: 0.5px;
+			}
 
-          const span = document.createElement("span");
-          span.textContent = opt;
+			.waterloo-btn:hover {
+				background-color: #e6c600;
+				color: var(--waterloo-black);
+			}
 
-          const wrapper = document.createElement("div");
-          wrapper.appendChild(input);
-          wrapper.appendChild(document.createTextNode(" "));
-          wrapper.appendChild(span);
+			.stats-section {
+				background-color: var(--waterloo-gold);
+				padding: 2rem 0;
+				margin-bottom: 2rem;
+			}
 
-          div.appendChild(wrapper);
-        });
+			.stat-number {
+				font-size: 3rem;
+				font-weight: 700;
+				line-height: 1;
+				color: var(--waterloo-black);
+			}
 
-        formContainer.appendChild(div);
-        qNum++;
-      }
+			.question {
+				margin-bottom: 2rem;
+				padding: 1.5rem;
+				border-radius: 0;
+				background-color: white;
+				box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+				border-left: 4px solid var(--waterloo-gold);
+			}
 
-      // Show all solutions initially
-      const results = document.getElementById("results");
-      results.innerHTML = "";
-      solutions.forEach(sol => {
-        const li = document.createElement("li");
-        li.className = "solution-item";
-        li.dataset.solution = sol;
-        li.textContent = sol;
-        results.appendChild(li);
-      });
+			.solution-item {
+				padding: 0.75rem 1rem;
+				margin-bottom: 0.5rem;
+				border-radius: 0;
+				background-color: white;
+				box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+				border-left: 3px solid var(--waterloo-gold);
+			}
 
-      document.getElementById("resetBtn").addEventListener("click", resetForm);
-    }
+			.hidden {
+				display: none;
+			}
 
-    function updateResults() {
-      const selected = Array.from(document.querySelectorAll("input[type=radio]:checked"))
-        .map(input => input.value);
+			.form-check-input {
+				margin-right: 0.5rem;
+				cursor: pointer;
+			}
 
-      const resultItems = document.querySelectorAll(".solution-item");
+			.form-check {
+				margin-bottom: 0.5rem;
+			}
+			
+			.form-check-label {
+				cursor: pointer;
+			}
 
-      resultItems.forEach(li => {
-        const sol = li.dataset.solution;
-        const isMatch = selected.every(opt => matrix[opt]?.[sol] === 1);
-        li.classList.toggle("hidden", !isMatch);
-      });
-    }
+			.results-container {
+				position: sticky;
+				top: 2rem;
+			}
 
-    function resetForm() {
-      document.querySelectorAll("input[type=radio]").forEach(input => input.checked = false);
-      document.querySelectorAll(".solution-item").forEach(li => li.classList.remove("hidden"));
-    }
-  </script>
+			.card {
+				border-radius: 0;
+			}
 
+			.card-header {
+				background-color: var(--waterloo-black);
+				color: white;
+				border-radius: 0;
+			}
 
+			.badge.bg-success {
+				background-color: var(--waterloo-gold) !important;
+				color: var(--waterloo-black) !important;
+			}
 
+			.badge.bg-primary {
+				background-color: var(--waterloo-black) !important;
+				color: white !important;
+			}
 
-</body></html>
+			footer {
+				background-color: var(--waterloo-dark-gray);
+				color: white;
+				padding: 2rem 0;
+				margin-top: 3rem;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Waterloo Header -->
+		<header class="waterloo-header">
+			<div class="container">
+				<div class="d-flex justify-content-between align-items-center">
+					<a href="#">
+						<img src="./uwaterloo-logo.svg" alt="University of Waterloo" class="waterloo-logo" />
+					</a>
+				</div>
+			</div>
+		</header>
+		<div style="position: absolute; top: 72px; width: 100%; z-index: 1010" class="d-print-none">
+			<div>
+				<div style="height: 7px; width: 25%; float: left; background-color: rgb(255, 254, 174)"></div>
+				<div style="height: 7px; width: 25%; float: left; background-color: rgb(254, 232, 79)"></div>
+				<div style="height: 7px; width: 25%; float: left; background-color: rgb(254, 212, 91)"></div>
+				<div style="height: 7px; width: 25%; float: left; background-color: rgb(227, 179, 58)"></div>
+			</div>
+			<!---->
+		</div>
+
+		<!-- Main Content -->
+		<div class="container" id="tool">
+			<div class="row my-4">
+				<div class="col-12">
+					<h2 class="mb-4">Research storage solution selector</h2>
+					<p class="lead">Find the best storage options for your research data that meet your technical requirements and security needs</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="card mb-4 rounded">
+						<div class="card-header d-flex justify-content-between align-items-center">
+							<h3 class="h5 mb-0">Requirements</h3>
+							<button id="resetBtn" class="waterloo-btn">Reset All</button>
+						</div>
+						<div class="card-body">
+							<div id="formContainer">
+								<!-- Questions will be inserted here by JavaScript -->
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="card rounded results-container">
+						<div class="card-header">
+							<h3 class="h5 mb-0">Matching solutions</h3>
+						</div>
+						<div class="card-body">
+							<ul id="results" class="list-unstyled">
+								<!-- Results will be inserted here by JavaScript -->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap JS Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+		<script>
+			const CSV_URL = "./storage.csv"; // Update path if necessary
+
+			let questions = {};
+			let optionIndex = {};
+			let matrix = {};
+			let solutions = [];
+
+			fetch(CSV_URL)
+				.then((response) => response.text())
+				.then((csvText) => {
+					const data = parseCSV(csvText);
+					processCSV(data);
+				})
+				.catch((error) => {
+					document.body.innerHTML = `<p style="color:red">Failed to load CSV: ${error.message}</p>`;
+				});
+
+			// Custom CSV parser function
+			function parseCSV(csvText) {
+				const lines = csvText.split(/\r\n|\n/);
+				const headers = lines[0].split(",").map((header) => header.trim());
+
+				const results = [];
+
+				for (let i = 1; i < lines.length; i++) {
+					// Skip empty lines
+					if (!lines[i].trim()) continue;
+
+					// Handle quoted values with commas inside them
+					const row = {};
+					let currentPos = 0;
+					let fieldValue = "";
+					let inQuotes = false;
+					const line = lines[i];
+
+					for (let j = 0; j < headers.length; j++) {
+						fieldValue = "";
+						inQuotes = false;
+
+						// Find the value for this column
+						while (currentPos < line.length) {
+							const char = line[currentPos];
+							currentPos++;
+
+							if (char === '"') {
+								if (inQuotes && currentPos < line.length && line[currentPos] === '"') {
+									// Handle escaped quotes (double quotes)
+									fieldValue += '"';
+									currentPos++;
+								} else {
+									// Toggle quote state
+									inQuotes = !inQuotes;
+								}
+							} else if (char === "," && !inQuotes) {
+								// End of field
+								break;
+							} else {
+								fieldValue += char;
+							}
+						}
+
+						// Assign to the correct header
+						row[headers[j]] = fieldValue.trim();
+					}
+
+					results.push(row);
+				}
+
+				return results;
+			}
+
+			function processCSV(data) {
+				const formContainer = document.getElementById("formContainer");
+
+				// Extract questions and options
+				const qMap = {};
+				data.forEach((row, i) => {
+					const q = row["Question"]?.trim();
+					const opt = row["Options"]?.trim();
+					if (!opt) return;
+
+					if (!qMap[q]) qMap[q] = [];
+					qMap[q].push(opt);
+					optionIndex[opt] = i;
+				});
+
+				questions = qMap;
+				solutions = Object.keys(data[0]).slice(2); // All columns after "Options"
+
+				// Build matrix
+				for (const [opt, rowIdx] of Object.entries(optionIndex)) {
+					matrix[opt] = {};
+					solutions.forEach((sol) => {
+						matrix[opt][sol] = parseInt(data[rowIdx][sol]) || 0;
+					});
+				}
+
+				// Build form with Bootstrap styling
+				let qNum = 0;
+				for (const [qText, opts] of Object.entries(questions)) {
+					const div = document.createElement("div");
+					div.className = "question mb-4";
+
+					const label = document.createElement("h3");
+					label.className = "h5 mb-3";
+					label.textContent = qText;
+					div.appendChild(label);
+
+					const optionsGroup = document.createElement("div");
+					optionsGroup.className = "ms-2";
+
+					opts.forEach((opt) => {
+						// Create Bootstrap form-check
+						const wrapper = document.createElement("div");
+						wrapper.className = "form-check";
+
+						const input = document.createElement("input");
+						input.type = "radio";
+						input.name = "q" + qNum;
+						input.value = opt;
+						input.className = "form-check-input";
+						input.id = "opt-" + qNum + "-" + optionIndex[opt]; // Unique ID
+						input.addEventListener("change", updateResults);
+
+						const label = document.createElement("label");
+						label.className = "form-check-label";
+						label.htmlFor = input.id;
+						label.textContent = opt;
+
+						wrapper.appendChild(input);
+						wrapper.appendChild(label);
+						optionsGroup.appendChild(wrapper);
+					});
+
+					div.appendChild(optionsGroup);
+					formContainer.appendChild(div);
+					qNum++;
+				}
+
+				// Show all solutions initially with Bootstrap styling
+				const results = document.getElementById("results");
+				results.innerHTML = "";
+				solutions.forEach((sol) => {
+					const li = document.createElement("li");
+					li.className = "solution-item";
+					li.dataset.solution = sol;
+
+					const badge = document.createElement("span");
+					badge.className = "badge bg-success me-2";
+					badge.textContent = "✓";
+
+					li.appendChild(badge);
+					li.appendChild(document.createTextNode(sol));
+
+					results.appendChild(li);
+				});
+
+				document.getElementById("resetBtn").addEventListener("click", resetForm);
+			}
+
+			function updateResults() {
+				const selected = Array.from(document.querySelectorAll("input[type=radio]:checked")).map((input) => input.value);
+
+				const resultsContainer = document.getElementById("results").parentNode;
+				const resultItems = document.querySelectorAll(".solution-item");
+				let matchCount = 0;
+
+				resultItems.forEach((li) => {
+					const sol = li.dataset.solution;
+					const isMatch = selected.every((opt) => matrix[opt]?.[sol] === 1);
+
+					// Update visual state
+					li.classList.toggle("hidden", !isMatch);
+
+					if (!isMatch) {
+						li.querySelector(".badge").className = "badge bg-success me-2";
+					} else {
+						matchCount++;
+					}
+				});
+
+				// Update results header to show count
+				const resultsHeader = resultsContainer.previousElementSibling;
+				const countBadge = resultsHeader.querySelector(".count-badge");
+
+				if (countBadge) {
+					countBadge.textContent = matchCount;
+				} else if (matchCount > 0) {
+					const newBadge = document.createElement("span");
+					newBadge.className = "badge bg-primary ms-2 count-badge";
+					newBadge.textContent = matchCount;
+					resultsHeader.querySelector("h2").appendChild(newBadge);
+				}
+
+				// Show a message if no results
+				if (matchCount === 0 && selected.length > 0) {
+					const noResults = document.getElementById("no-results");
+					if (!noResults) {
+						const message = document.createElement("p");
+						message.id = "no-results";
+						message.className = "text-center text-muted my-4";
+						message.innerHTML = "<em>No matching solutions found</em>";
+						resultsContainer.appendChild(message);
+					}
+				} else {
+					const noResults = document.getElementById("no-results");
+					if (noResults) noResults.remove();
+				}
+			}
+
+			function resetForm() {
+				// Uncheck all radio buttons
+				document.querySelectorAll("input[type=radio]").forEach((input) => (input.checked = false));
+
+				// Show all solution items
+				document.querySelectorAll(".solution-item").forEach((li) => {
+					li.classList.remove("hidden", "border", "border-success");
+					li.querySelector(".badge").className = "badge bg-success me-2";
+				});
+
+				// Remove count badge
+				const countBadge = document.querySelector(".count-badge");
+				if (countBadge) countBadge.remove();
+
+				// Remove no results message
+				const noResults = document.getElementById("no-results");
+				if (noResults) noResults.remove();
+
+				// Visual feedback for reset button
+				const resetBtn = document.getElementById("resetBtn");
+				resetBtn.classList.add("btn-success");
+				resetBtn.classList.remove("btn-outline-secondary");
+				resetBtn.textContent = "Reset Complete";
+
+				setTimeout(() => {
+					resetBtn.classList.add("btn-outline-secondary");
+					resetBtn.classList.remove("btn-success");
+					resetBtn.textContent = "Reset All";
+				}, 1000);
+			}
+		</script>
+	</body>
+</html>
