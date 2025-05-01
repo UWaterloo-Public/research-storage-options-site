@@ -1,0 +1,30 @@
+Question,Options,Performance campus storage,Proposed capacity campus storage ,OneDrive ,SharePoint ,MS Teams,"Public cloud (AWS, GCP, MS Azure)",Public cloud (UW MS Azure Storage) ,Public cloud - Wasabi,UW Dataverse (Borealis),Federated Research Data Repository (FRDR)  ,Math NetApp Storage,Math QNAP Storage,CSCF storage,Engineering storage,Health Research Drive storage,HealthCloud Storage,Environment Storage,Art Storage,Science Storage
+What type of storage do you need?,Active with backups made,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,,,1
+What type of storage do you need?,"Back-up, my active copy is elsewhere",0,1,0,0,0,1,1,1,0,0,1,1,1,1,1,1,,,1
+What type of storage do you need?,Long-term storage with backups made,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,,,0
+What type of storage do you need?,Open data sharing (public/published data access),0,0,0,1,0,0,0,0,1,1,1,*future*,1,0,0,0,,,0
+Does your data need high availability through replication to a different location,"Yes, I need multiple copies in different locations",1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,,,1
+Does your data need high availability through replication to a different location,No,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,,,0
+What security classifciation does your data have?,Public ,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,,,1
+What security classifciation does your data have?,Confidential ,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,,,1
+What security classifciation does your data have?,Restricted ,1,1,1,1,1,talk ISS,talk to ISS,talk ISS,0,0,1,1,1,1,1,1,,,1
+What security classifciation does your data have?,Highly restricted ,1,1,talk ISS,talk ISS,talk ISS,,talk to ISS,,0,0,1,1,1,0,0,0,,,0
+Collaboration type? ,No Collaboration,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Collaboration type? ,University of Waterloo affiliated entities  (watiam cred),1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,,,1
+Collaboration type? ,NON-University of Waterloo affiliated entities with a sponsored account with MS licensing,1,1,1,1,1,1,1,1,0,0,1,0,1,0,1,1,,,0
+Collaboration type? ,NON-University of Waterloo affiliated entities without a sponsored account ,0,0,0,0,0,1,0,1,0,0,0,0,1,1,0,1,,,0
+How much storage do you need?,300 GB or less,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,,,1
+How much storage do you need?,300 GB to 5 TB,1,1,1,1,1,1,1,1,,,1,1,1,1,1,1,,,1
+How much storage do you need?,5 Tb to 25 TB,1,1,0,1,1,1,1,1,,,1,1,1,1,1,1,,,1
+How much storage do you need?,Over 25 TB,1,1,0,0,0,1,1,1,,,0,1,1,1,0,0,,,0
+Will you be doing computing or directly running applications or databases on this storage? ,"Yes, applications will be running directly from this storage. ",1,0,0,0,0,1,1,0,0,0,1,0,1,0,1,1,,,0
+Will you be doing computing or directly running applications or databases on this storage? ,"No, applications or databases will not be running directly on this storage. ",0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,,,1
+Do you have access to an account to pay for charged storage? ,"Yes, I have an account or will be able to get one ",1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,,,0
+Do you have access to an account to pay for charged storage? ,"No, I am interested in free or no-charge options ",0,0,1,1,1,0,0,0,1,1,1,1,1,1,1,1,,,1
+Are you in any of these faculties,Math,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,,,0
+Are you in any of these faculties,Computer Science,1,1,1,1,1,1,1,1,1,1,0,0,1,0,0,0,,,0
+Are you in any of these faculties,Engineering,1,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,,,0
+Are you in any of these faculties,Health,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,,,0
+Are you in any of these faculties,Environment,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,,0
+Are you in any of these faculties,Art,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,,1,0
+Are you in any of these faculties,Science,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,,,1
