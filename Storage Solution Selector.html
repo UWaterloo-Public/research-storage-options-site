@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>Storage Solution Selector</title>
+  <script src="Storage%20Solution%20Selector_files/papaparse.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    .container { display: flex; gap: 3rem; align-items: flex-start; }
+    .form-column { flex: 1; min-width: 300px; }
+    .solution-column { flex: 1; min-width: 300px; }
+    .question { margin-bottom: 1.5rem; }
+    .option { margin-left: 1rem; }
+    .solution-list h2 { margin-bottom: 0.5rem; }
+    .solution-item { padding: 0.25rem 0; }
+    .hidden { display: none; }
+    #resetBtn {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #ccc;
+      border: none;
+      cursor: pointer;
+    }
+    #resetBtn:hover {
+      background: #bbb;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Select Your Storage Requirements</h1>
+  <div class="container">
+    <div class="form-column">
+      <button id="resetBtn">Reset</button>
+      <div id="formContainer"><div class="question"><h3>What type of storage do you need?</h3><div><input type="radio" name="q0" value="Active with backups made" class="option"> <span>Active with backups made</span></div><div><input type="radio" name="q0" value="Back-up, my active copy is elsewhere" class="option"> <span>Back-up, my active copy is elsewhere</span></div><div><input type="radio" name="q0" value="Long-term storage with backups made" class="option"> <span>Long-term storage with backups made</span></div><div><input type="radio" name="q0" value="Open data sharing (public/published data access)" class="option"> <span>Open data sharing (public/published data access)</span></div></div><div class="question"><h3>Does your data need high availability through replication to a different location</h3><div><input type="radio" name="q1" value="Yes, I need multiple copies in different locations" class="option"> <span>Yes, I need multiple copies in different locations</span></div><div><input type="radio" name="q1" value="No" class="option"> <span>No</span></div></div><div class="question"><h3>What security classifciation does your data have?</h3><div><input type="radio" name="q2" value="Public" class="option"> <span>Public</span></div><div><input type="radio" name="q2" value="Confidential" class="option"> <span>Confidential</span></div><div><input type="radio" name="q2" value="Restricted" class="option"> <span>Restricted</span></div><div><input type="radio" name="q2" value="Highly restricted" class="option"> <span>Highly restricted</span></div></div><div class="question"><h3>Collaboration type?</h3><div><input type="radio" name="q3" value="No Collaboration" class="option"> <span>No Collaboration</span></div><div><input type="radio" name="q3" value="University of Waterloo affiliated entities&nbsp;&nbsp;(watiam cred)" class="option"> <span>University of Waterloo affiliated entities&nbsp;&nbsp;(watiam cred)</span></div><div><input type="radio" name="q3" value="NON-University of Waterloo affiliated entities with a sponsored account&nbsp;with MS licensing" class="option"> <span>NON-University of Waterloo affiliated entities with a sponsored account&nbsp;with MS licensing</span></div><div><input type="radio" name="q3" value="NON-University of Waterloo affiliated entities without a sponsored account" class="option"> <span>NON-University of Waterloo affiliated entities without a sponsored account</span></div></div><div class="question"><h3>How much storage do you need?</h3><div><input type="radio" name="q4" value="300 GB or less" class="option"> <span>300 GB or less</span></div><div><input type="radio" name="q4" value="300 GB to 5 TB" class="option"> <span>300 GB to 5 TB</span></div><div><input type="radio" name="q4" value="5 Tb to 25 TB" class="option"> <span>5 Tb to 25 TB</span></div><div><input type="radio" name="q4" value="Over 25 TB" class="option"> <span>Over 25 TB</span></div></div><div class="question"><h3>Will you be doing computing or directly running applications or databases on this storage?</h3><div><input type="radio" name="q5" value="Yes, applications will be running directly from this storage." class="option"> <span>Yes, applications will be running directly from this storage.</span></div><div><input type="radio" name="q5" value="No, applications or databases will not be running directly on this storage." class="option"> <span>No, applications or databases will not be running directly on this storage.</span></div></div><div class="question"><h3>Do you have access to an account to pay for charged storage?</h3><div><input type="radio" name="q6" value="Yes, I have an account or will be able to get one" class="option"> <span>Yes, I have an account or will be able to get one</span></div><div><input type="radio" name="q6" value="No, I am interested in free or no-charge options" class="option"> <span>No, I am interested in free or no-charge options</span></div></div><div class="question"><h3>Are you in any of these faculties</h3><div><input type="radio" name="q7" value="Math" class="option"> <span>Math</span></div><div><input type="radio" name="q7" value="Computer Science" class="option"> <span>Computer Science</span></div><div><input type="radio" name="q7" value="Engineering" class="option"> <span>Engineering</span></div><div><input type="radio" name="q7" value="Health" class="option"> <span>Health</span></div><div><input type="radio" name="q7" value="Environment" class="option"> <span>Environment</span></div><div><input type="radio" name="q7" value="Art" class="option"> <span>Art</span></div><div><input type="radio" name="q7" value="Science" class="option"> <span>Science</span></div></div></div>
+    </div>
+
+    <div class="solution-column">
+      <div class="solution-list">
+        <h2>Matching Solutions:</h2>
+        <ul id="results"><li class="solution-item" data-solution="Performance campus storage">Performance campus storage</li><li class="solution-item" data-solution="Proposed capacity campus storage ">Proposed capacity campus storage </li><li class="solution-item" data-solution="OneDrive ">OneDrive </li><li class="solution-item" data-solution="SharePoint ">SharePoint </li><li class="solution-item" data-solution="MS Teams">MS Teams</li><li class="solution-item" data-solution="Public cloud (AWS, GCP, MS Azure)">Public cloud (AWS, GCP, MS Azure)</li><li class="solution-item" data-solution="Public cloud (UW MS Azure Storage) ">Public cloud (UW MS Azure Storage) </li><li class="solution-item" data-solution="Public cloud - Wasabi">Public cloud - Wasabi</li><li class="solution-item" data-solution="UW Dataverse (Borealis)">UW Dataverse (Borealis)</li><li class="solution-item" data-solution="Federated Research Data Repository (FRDR)  ">Federated Research Data Repository (FRDR)  </li><li class="solution-item" data-solution="Math NetApp Storage">Math NetApp Storage</li><li class="solution-item" data-solution="Math QNAP Storage">Math QNAP Storage</li><li class="solution-item" data-solution="CSCF storage">CSCF storage</li><li class="solution-item" data-solution="Engineering storage">Engineering storage</li><li class="solution-item" data-solution="Health Research Drive storage">Health Research Drive storage</li><li class="solution-item" data-solution="HealthCloud Storage">HealthCloud Storage</li><li class="solution-item" data-solution="Environment Storage">Environment Storage</li><li class="solution-item" data-solution="Art Storage">Art Storage</li><li class="solution-item" data-solution="Science Storage">Science Storage</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const CSV_URL = "./Storage.csv"; // Update path if necessary
+
+    let questions = {};
+    let optionIndex = {};
+    let matrix = {};
+    let solutions = [];
+
+    fetch(CSV_URL)
+      .then(response => response.text())
+      .then(csvText => {
+        Papa.parse(csvText, {
+          header: true,
+          skipEmptyLines: true,
+          complete: function(results) {
+            processCSV(results.data);
+          }
+        });
+      })
+      .catch(error => {
+        document.body.innerHTML = `<p style="color:red">Failed to load CSV: ${error.message}</p>`;
+      });
+
+    function processCSV(data) {
+      const formContainer = document.getElementById("formContainer");
+
+      // Extract questions and options
+      const qMap = {};
+      data.forEach((row, i) => {
+        const q = row["Question"]?.trim();
+        const opt = row["Options"]?.trim();
+        if (!opt) return;
+
+        if (!qMap[q]) qMap[q] = [];
+        qMap[q].push(opt);
+        optionIndex[opt] = i;
+      });
+
+      questions = qMap;
+      solutions = Object.keys(data[0]).slice(2); // All columns after "Options"
+
+      // Build matrix
+      for (const [opt, rowIdx] of Object.entries(optionIndex)) {
+        matrix[opt] = {};
+        solutions.forEach(sol => {
+          matrix[opt][sol] = parseInt(data[rowIdx][sol]) || 0;
+        });
+      }
+
+      // Build form
+      let qNum = 0;
+      for (const [qText, opts] of Object.entries(questions)) {
+        const div = document.createElement("div");
+        div.className = "question";
+
+        const label = document.createElement("h3");
+        label.textContent = qText;
+        div.appendChild(label);
+
+        opts.forEach(opt => {
+          const input = document.createElement("input");
+          input.type = "radio";
+          input.name = "q" + qNum;
+          input.value = opt;
+          input.className = "option";
+          input.addEventListener("change", updateResults);
+
+          const span = document.createElement("span");
+          span.textContent = opt;
+
+          const wrapper = document.createElement("div");
+          wrapper.appendChild(input);
+          wrapper.appendChild(document.createTextNode(" "));
+          wrapper.appendChild(span);
+
+          div.appendChild(wrapper);
+        });
+
+        formContainer.appendChild(div);
+        qNum++;
+      }
+
+      // Show all solutions initially
+      const results = document.getElementById("results");
+      results.innerHTML = "";
+      solutions.forEach(sol => {
+        const li = document.createElement("li");
+        li.className = "solution-item";
+        li.dataset.solution = sol;
+        li.textContent = sol;
+        results.appendChild(li);
+      });
+
+      document.getElementById("resetBtn").addEventListener("click", resetForm);
+    }
+
+    function updateResults() {
+      const selected = Array.from(document.querySelectorAll("input[type=radio]:checked"))
+        .map(input => input.value);
+
+      const resultItems = document.querySelectorAll(".solution-item");
+
+      resultItems.forEach(li => {
+        const sol = li.dataset.solution;
+        const isMatch = selected.every(opt => matrix[opt]?.[sol] === 1);
+        li.classList.toggle("hidden", !isMatch);
+      });
+    }
+
+    function resetForm() {
+      document.querySelectorAll("input[type=radio]").forEach(input => input.checked = false);
+      document.querySelectorAll(".solution-item").forEach(li => li.classList.remove("hidden"));
+    }
+  </script>
+
+
+
+
+</body></html>
