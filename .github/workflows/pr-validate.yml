@@ -1,0 +1,18 @@
+name: pr-validate
+
+on:
+  pull_request:
+    branches: 
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Validate
+    steps:
+      - name: csvlinter
+        uses: kcheriyath/csvlinter@V0.6.0
+        with:
+          file_list: "./storage2.csv"
+          fail_on_error: true
+          
