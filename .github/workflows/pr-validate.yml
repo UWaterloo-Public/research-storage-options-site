@@ -11,8 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Validate
     steps:
-      - name: csvlinter
-        uses: kcheriyath/csvlinter@V0.6.0
+      - uses: actions/checkout@v4
+    
+      - uses: kcheriyath/csvlinter@V0.6.0
         with:
           fail_on_error: true
           
