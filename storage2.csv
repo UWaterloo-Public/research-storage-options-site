@@ -1,0 +1,37 @@
+Question,Options,Hover-over notes and comments,Link to relevant site(s) for more information,IST data backup service,Performance campus storage,Proposed capacity campus storage ,OneDrive ,SharePoint ,MS Teams,"Public cloud (AWS, GCP, MS Azure)",Public cloud (UW MS Azure Storage) ,Public cloud - Wasabi,UW Dataverse (Borealis),Federated Research Data Repository (FRDR)  ,Math NetApp Storage,Math QNAP Storage,CSCF storage,Engineering storage,Health Research Drive storage,HealthCloud Storage,Science Storage
+Links,,,,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/42588209307/About+IST+backup+service,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/42583588985/Bulk+storage+purchasing,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/42583588985/Bulk+storage+purchasing,,,,,,https://wasabi.com/,,,MFCF - https://uwaterloo.ca/math-faculty-computing-facility/services/research-and-staff-file-storage,,CSCF - https://uwaterloo.ca/computer-science-computing-facility/getting-help/help-desk,Engineering - https://uwaterloo.ca/engineering-computing/,Health - https://uwaterloo.ca/health-computing/,,Science - https://uwaterloo.ca/science/about/people/scidesk
+Are you affiliated with any of these faculties?,Math,,,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0
+Are you affiliated with any of these faculties?,Computer Science,,,1,1,1,1,1,1,1,1,1,1,1,0,0,1,0,0,0,0
+Are you affiliated with any of these faculties?,Engineering,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,0
+Are you affiliated with any of these faculties?,Health,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,0
+Are you affiliated with any of these faculties?,Science,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1
+Are you affiliated with any of these faculties?,Arts,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0
+Are you affiliated with any of these faculties?,Environment,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0
+Are you storing research data?,Yes,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Are you storing research data?,No,,,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
+What security classification does your data have?,Low Risk / Public,Low,https://uwaterloo.ca/information-systems-technology/about/policies-standards-and-guidelines/security/guidance-information-confidentiality-classification-policy,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+What security classification does your data have?,Medium Risk / Confidential,Medium,https://uwaterloo.ca/information-systems-technology/about/policies-standards-and-guidelines/security/guidance-information-confidentiality-classification-policy,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
+What security classification does your data have?,High Risk / Restricted,High,https://uwaterloo.ca/information-systems-technology/about/policies-standards-and-guidelines/security/guidance-information-confidentiality-classification-policy,1,1,1,1,1,1,"Contact Information Security Services, andriana.vanezi@uwaterloo.ca","Contact Information Security Services, andriana.vanezi@uwaterloo.ca","Contact Information Security Services, andriana.vanezi@uwaterloo.ca",0,0,1,1,1,1,1,1,1
+What security classification does your data have?,Very High / Highly Restricted,Very High,https://uwaterloo.ca/information-systems-technology/about/policies-standards-and-guidelines/security/guidance-information-confidentiality-classification-policy,1,1,1,"Contact Information Security Services, andriana.vanezi@uwaterloo.ca","Contact Information Security Services, andriana.vanezi@uwaterloo.ca","Contact Information Security Services, andriana.vanezi@uwaterloo.ca",0,"Contact Information Security Services, andriana.vanezi@uwaterloo.ca",0,0,0,1,1,1,0,0,0,0
+How much storage do you need?,100 GB or less,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+How much storage do you need?,100 GB to 5 TB,,,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+How much storage do you need?,5 Tb to 25 TB,,,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+How much storage do you need?,Over 25 TB,,,1,1,1,0,0,0,1,1,1,1,1,0,1,1,1,0,0,0
+Do you have access to an account to pay for charged storage?,Yes,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0
+Do you have access to an account to pay for charged storage?,No,,,0,0,0,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1
+Are you actively working on the data in this storage?,Yes,,,0,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
+Are you actively working on the data in this storage?,No,,,1,0,1,0,0,0,1,1,1,0,0,1,1,1,1,1,1,0
+Do you have a high performance requirement?,Yes,Databases and virtualization,,0,1,0,0,0,0,1,1,0,0,0,1,0,1,0,1,1,0
+Do you have a high performance requirement?,No,General files,,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Do you require system snapshots for older version recovery of files?,Yes,,,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Do you require system snapshots for older version recovery of files?,No,,,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
+Do you require Microsoft Office product files versioning?,Yes,,,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0
+Do you require Microsoft Office product files versioning?,No,,,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Do you require your data to exist in multiple data centres for high availability?,Yes,Some services may have additional costs,,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
+Do you require your data to exist in multiple data centres for high availability?,No,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0
+"Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",Yes,,https://uwaterloo.atlassian.net/servicedesk/customer/portal/2/group/410/create/318,0,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
+"Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",No,,https://uwaterloo.atlassian.net/servicedesk/customer/portal/2/group/410/create/319,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
+"Do you share or collaborate on your files with people who do not have a WatIAM account? (e.g., external people)",Yes,,,0,0,0,1,1,1,1,0,1,0,0,0,0,1,1,0,1,0
+"Do you share or collaborate on your files with people who do not have a WatIAM account? (e.g., external people)",No,,,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
+Is the data publicly accessible?,Yes,,,0,0,0,0,1,0,0,0,0,1,1,1,0,1,0,0,0,0
+Is the data publicly accessible?,No,,,1,1,1,1,1,1,1,1,1,,,1,1,1,1,1,1,1

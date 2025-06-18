@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Research Storage Options | University of Waterloo</title>
+		<link rel="icon" type="image/x-icon" href="./favicon.ico" />
 		<!-- Bootstrap CSS -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 		<style>
@@ -94,7 +95,7 @@
 				border: none;
 				padding: 0.5rem 1.5rem;
 				font-weight: 600;
-				border-radius: 0;
+				border-radius: 4px;
 				text-transform: uppercase;
 				font-size: 0.9rem;
 				letter-spacing: 0.5px;
@@ -126,7 +127,6 @@
 				box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 				border-left: 4px solid var(--waterloo-gold);
 			}
-
 			.solution-item {
 				padding: 0.75rem 1rem;
 				margin-bottom: 0.5rem;
@@ -134,23 +134,79 @@
 				background-color: white;
 				box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 				border-left: 3px solid var(--waterloo-gold);
+				display: flex;
+				align-items: center;
+			}
+
+			.solution-item.clickable {
+				cursor: pointer;
+				transition: background-color 0.2s ease;
+			}
+
+			.solution-item.clickable:hover {
+				background-color: #f8f9fa;
+			}
+
+			.solution-name {
+				flex: 1;
+				color: inherit;
+				text-decoration: none;
+			}
+
+			.solution-name:hover {
+				color: inherit;
+				text-decoration: none;
+			}
+			.external-link-icon {
+				margin-left: 8px;
+				font-size: 18px;
+				vertical-align: middle;
+				display: inline-block;
+				line-height: 1;
+			}
+
+			.solution-item.clickable:hover .external-link-icon {
+				opacity: 1;
 			}
 
 			.hidden {
 				display: none;
 			}
-
 			.form-check-input {
-				margin-right: 0.5rem;
+				margin-right: 0;
+				margin-left: 0 !important;
 				cursor: pointer;
+				width: 1.25em;
+				height: 1.25em;
+				transform: scale(1.2);
+				flex-shrink: 0;
+				margin-top: 0;
+				margin-bottom: 0;
+				vertical-align: middle;
 			}
 
 			.form-check {
-				margin-bottom: 0.5rem;
+				margin-bottom: 0.25rem;
+				padding: 0.5rem;
+				border-radius: 4px;
+				transition: background-color 0.2s ease;
+				display: flex;
+				align-items: center;
 			}
-			
+
+			.form-check:hover {
+				background-color: rgba(254, 211, 76, 0.1);
+			}
+
 			.form-check-label {
 				cursor: pointer;
+				padding: 0 0 0 1rem;
+				display: flex;
+				align-items: center;
+				font-size: 1rem;
+				line-height: 1.4;
+				flex: 1;
+				margin-bottom: 0;
 			}
 
 			.results-container {
@@ -177,12 +233,83 @@
 				background-color: var(--waterloo-black) !important;
 				color: white !important;
 			}
-
 			footer {
 				background-color: var(--waterloo-dark-gray);
 				color: white;
 				padding: 2rem 0;
 				margin-top: 3rem;
+			}
+
+			.tooltip-text {
+				position: relative;
+				cursor: help;
+				border-bottom: 1px dotted #666;
+			}
+			.tooltip-text:hover::after {
+				content: attr(data-tooltip);
+				position: absolute;
+				left: 50%;
+				bottom: 100%;
+				transform: translateX(-50%);
+				background-color: rgba(0, 0, 0, 0.9);
+				color: white;
+				padding: 10px 15px;
+				border-radius: 6px;
+				font-size: 14px;
+				white-space: nowrap;
+				z-index: 1000;
+				margin-bottom: 8px;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+				line-height: 1.4;
+			}
+
+			.tooltip-text:hover::before {
+				content: "";
+				position: absolute;
+				left: 50%;
+				bottom: 100%;
+				transform: translateX(-50%);
+				border: 5px solid transparent;
+				border-top-color: rgba(0, 0, 0, 0.9);
+				margin-bottom: -5px;
+			}
+			.external-link {
+				color: var(--waterloo-black);
+				text-decoration: none;
+				padding: 6px 12px;
+				background-color: var(--waterloo-gold);
+				border-radius: 4px;
+				font-size: 13px;
+				font-weight: 500;
+				white-space: nowrap;
+				flex-shrink: 0;
+			}
+
+			.external-link:hover {
+				background-color: #e6c600;
+				color: var(--waterloo-black);
+			}
+
+			.service-link {
+				color: #0066cc;
+				text-decoration: none;
+				margin-left: 8px;
+				font-size: 12px;
+			}
+
+			.service-link:hover {
+				text-decoration: underline;
+			}
+			.question-header {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				margin-bottom: 1rem;
+			}
+
+			.question-header h3 {
+				flex: 1;
+				margin: 0;
 			}
 		</style>
 	</head>
@@ -199,10 +326,10 @@
 		</header>
 		<div style="position: absolute; top: 72px; width: 100%; z-index: 1010" class="d-print-none">
 			<div>
-				<div style="height: 7px; width: 25%; float: left; background-color: rgb(255, 254, 174)"></div>
-				<div style="height: 7px; width: 25%; float: left; background-color: rgb(254, 232, 79)"></div>
-				<div style="height: 7px; width: 25%; float: left; background-color: rgb(254, 212, 91)"></div>
-				<div style="height: 7px; width: 25%; float: left; background-color: rgb(227, 179, 58)"></div>
+				<div style="height: 18px; width: 25%; float: left; background-color: rgb(255, 254, 174)"></div>
+				<div style="height: 18px; width: 25%; float: left; background-color: rgb(254, 232, 79)"></div>
+				<div style="height: 18px; width: 25%; float: left; background-color: rgb(254, 212, 91)"></div>
+				<div style="height: 18px; width: 25%; float: left; background-color: rgb(227, 179, 58)"></div>
 			</div>
 			<!---->
 		</div>
@@ -211,7 +338,7 @@
 		<div class="container" id="tool">
 			<div class="row my-4">
 				<div class="col-12">
-					<h2 class="mb-4">Research storage solution selector</h2>
+					<h2 class="my-4">Research storage solution selector</h2>
 					<p class="lead">Find the best storage options for your research data that meet your technical requirements and security needs</p>
 				</div>
 			</div>
@@ -245,99 +372,75 @@
 				</div>
 			</div>
 		</div>
-
 		<!-- Bootstrap JS Bundle with Popper -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+		<!-- Papa Parse CSV Library -->
+		<script src="./papaparse.min.js"></script>
 		<script>
-			const CSV_URL = "./storage.csv"; // Update path if necessary
-
+			const CSV_URL = "./storage2.csv";
 			let questions = {};
 			let optionIndex = {};
 			let matrix = {};
 			let solutions = [];
+			let hoverNotes = {};
+			let questionLinks = {};
+			let serviceLinks = {};
 
 			fetch(CSV_URL)
 				.then((response) => response.text())
 				.then((csvText) => {
-					const data = parseCSV(csvText);
+					const data = Papa.parse(csvText, {
+						header: true,
+						skipEmptyLines: true,
+						delimiter: ",",
+						quoteChar: '"',
+					}).data;
 					processCSV(data);
 				})
 				.catch((error) => {
 					document.body.innerHTML = `<p style="color:red">Failed to load CSV: ${error.message}</p>`;
-				});
-
-			// Custom CSV parser function
-			function parseCSV(csvText) {
-				const lines = csvText.split(/\r\n|\n/);
-				const headers = lines[0].split(",").map((header) => header.trim());
-
-				const results = [];
-
-				for (let i = 1; i < lines.length; i++) {
-					// Skip empty lines
-					if (!lines[i].trim()) continue;
-
-					// Handle quoted values with commas inside them
-					const row = {};
-					let currentPos = 0;
-					let fieldValue = "";
-					let inQuotes = false;
-					const line = lines[i];
-
-					for (let j = 0; j < headers.length; j++) {
-						fieldValue = "";
-						inQuotes = false;
-
-						// Find the value for this column
-						while (currentPos < line.length) {
-							const char = line[currentPos];
-							currentPos++;
-
-							if (char === '"') {
-								if (inQuotes && currentPos < line.length && line[currentPos] === '"') {
-									// Handle escaped quotes (double quotes)
-									fieldValue += '"';
-									currentPos++;
-								} else {
-									// Toggle quote state
-									inQuotes = !inQuotes;
-								}
-							} else if (char === "," && !inQuotes) {
-								// End of field
-								break;
-							} else {
-								fieldValue += char;
-							}
-						}
-
-						// Assign to the correct header
-						row[headers[j]] = fieldValue.trim();
-					}
-
-					results.push(row);
-				}
-
-				return results;
-			}
+				}); // Custom CSV parser function - REMOVED, now using Papa Parse
 
 			function processCSV(data) {
 				const formContainer = document.getElementById("formContainer");
 
-				// Extract questions and options
+				// Find the Links row and extract service links
+				const linksRow = data.find((row) => row.Question === "Links");
+				if (linksRow) {
+					// Get all column headers (solutions) starting from column 5
+					const headers = Object.keys(data[0]).slice(4);
+					headers.forEach((header) => {
+						if (linksRow[header] && linksRow[header].trim()) {
+							serviceLinks[header] = linksRow[header].trim();
+						}
+					});
+				}
+
+				// Extract questions and options (skip Links row)
 				const qMap = {};
 				data.forEach((row, i) => {
 					const q = row["Question"]?.trim();
 					const opt = row["Options"]?.trim();
-					if (!opt) return;
+					if (!opt || q === "Links") return;
 
-					if (!qMap[q]) qMap[q] = [];
+					if (!qMap[q]) {
+						qMap[q] = [];
+						// Store question link if available
+						const questionLink = row["Link to relevant site(s) for more information"]?.trim();
+						if (questionLink) {
+							questionLinks[q] = questionLink;
+						}
+					}
 					qMap[q].push(opt);
-					optionIndex[opt] = i;
+					optionIndex[opt] = i; // Store hover notes if available (use question + option as key to make unique)
+					const hoverNote = row["Hover-over notes and comments"]?.trim();
+					if (hoverNote) {
+						hoverNotes[q + "|" + opt] = hoverNote;
+					}
 				});
 
 				questions = qMap;
-				solutions = Object.keys(data[0]).slice(2); // All columns after "Options"
+				solutions = Object.keys(data[0]).slice(4); // All columns after "Link to relevant site(s)"
 
 				// Build matrix
 				for (const [opt, rowIdx] of Object.entries(optionIndex)) {
@@ -353,13 +456,32 @@
 					const div = document.createElement("div");
 					div.className = "question mb-4";
 
+					// Create question header with optional external link
+					const headerDiv = document.createElement("div");
+					headerDiv.className = "question-header";
+
 					const label = document.createElement("h3");
-					label.className = "h5 mb-3";
+					label.className = "h5 mb-0";
 					label.textContent = qText;
-					div.appendChild(label);
+
+					headerDiv.appendChild(label);
+
+					// Add external link if available
+					if (questionLinks[qText]) {
+						const externalLink = document.createElement("a");
+						externalLink.href = questionLinks[qText];
+						externalLink.target = "_blank";
+						externalLink.rel = "noopener noreferrer";
+						externalLink.className = "external-link";
+						externalLink.textContent = "ℹ More Info";
+						headerDiv.appendChild(externalLink);
+					}
+
+					div.appendChild(headerDiv);
 
 					const optionsGroup = document.createElement("div");
-					optionsGroup.className = "ms-2";
+					optionsGroup.className = "ms-2"; // Check if this is the faculty question (multi-select)
+					const isFacultyQuestion = qText.includes("Are you affiliated with any of these faculties");
 
 					opts.forEach((opt) => {
 						// Create Bootstrap form-check
@@ -367,17 +489,25 @@
 						wrapper.className = "form-check";
 
 						const input = document.createElement("input");
-						input.type = "radio";
-						input.name = "q" + qNum;
+						input.type = isFacultyQuestion ? "checkbox" : "radio";
+						input.name = isFacultyQuestion ? "faculty" : "q" + qNum;
 						input.value = opt;
 						input.className = "form-check-input";
 						input.id = "opt-" + qNum + "-" + optionIndex[opt]; // Unique ID
 						input.addEventListener("change", updateResults);
-
 						const label = document.createElement("label");
 						label.className = "form-check-label";
-						label.htmlFor = input.id;
-						label.textContent = opt;
+						label.htmlFor = input.id; // Add tooltip if hover note exists (use question + option as key)
+						const tooltipKey = qText + "|" + opt;
+						if (hoverNotes[tooltipKey]) {
+							const tooltipSpan = document.createElement("span");
+							tooltipSpan.className = "tooltip-text";
+							tooltipSpan.setAttribute("data-tooltip", hoverNotes[tooltipKey]);
+							tooltipSpan.textContent = opt;
+							label.appendChild(tooltipSpan);
+						} else {
+							label.textContent = opt;
+						}
 
 						wrapper.appendChild(input);
 						wrapper.appendChild(label);
@@ -400,9 +530,27 @@
 					const badge = document.createElement("span");
 					badge.className = "badge bg-success me-2";
 					badge.textContent = "✓";
-
 					li.appendChild(badge);
-					li.appendChild(document.createTextNode(sol));
+
+					// If there's a service link, make the entire solution clickable
+					if (serviceLinks[sol]) {
+						li.classList.add("clickable");
+						li.addEventListener("click", () => {
+							window.open(serviceLinks[sol], "_blank", "noopener,noreferrer");
+						});
+
+						const solutionName = document.createElement("span");
+						solutionName.className = "solution-name";
+						solutionName.textContent = sol;
+						li.appendChild(solutionName);
+
+						const externalIcon = document.createElement("span");
+						externalIcon.className = "external-link-icon";
+						externalIcon.innerHTML = "↗";
+						li.appendChild(externalIcon);
+					} else {
+						li.appendChild(document.createTextNode(sol));
+					}
 
 					results.appendChild(li);
 				});
@@ -411,7 +559,11 @@
 			}
 
 			function updateResults() {
-				const selected = Array.from(document.querySelectorAll("input[type=radio]:checked")).map((input) => input.value);
+				// Get regular radio button selections
+				const radioSelected = Array.from(document.querySelectorAll("input[type=radio]:checked")).map((input) => input.value);
+
+				// Get faculty checkbox selections
+				const facultySelected = Array.from(document.querySelectorAll("input[name='faculty']:checked")).map((input) => input.value);
 
 				const resultsContainer = document.getElementById("results").parentNode;
 				const resultItems = document.querySelectorAll(".solution-item");
@@ -419,7 +571,17 @@
 
 				resultItems.forEach((li) => {
 					const sol = li.dataset.solution;
-					const isMatch = selected.every((opt) => matrix[opt]?.[sol] === 1);
+
+					// Check if all radio button selections match
+					const radioMatch = radioSelected.every((opt) => matrix[opt]?.[sol] === 1);
+
+					// Check if at least one faculty selection matches (OR logic for faculties)
+					let facultyMatch = true; // Default to true if no faculty selected
+					if (facultySelected.length > 0) {
+						facultyMatch = facultySelected.some((opt) => matrix[opt]?.[sol] === 1);
+					}
+
+					const isMatch = radioMatch && facultyMatch;
 
 					// Update visual state
 					li.classList.toggle("hidden", !isMatch);
@@ -442,10 +604,9 @@
 					newBadge.className = "badge bg-primary ms-2 count-badge";
 					newBadge.textContent = matchCount;
 					resultsHeader.querySelector("h2").appendChild(newBadge);
-				}
-
-				// Show a message if no results
-				if (matchCount === 0 && selected.length > 0) {
+				} // Show a message if no results
+				const totalSelections = radioSelected.length + facultySelected.length;
+				if (matchCount === 0 && totalSelections > 0) {
 					const noResults = document.getElementById("no-results");
 					if (!noResults) {
 						const message = document.createElement("p");
@@ -461,8 +622,8 @@
 			}
 
 			function resetForm() {
-				// Uncheck all radio buttons
-				document.querySelectorAll("input[type=radio]").forEach((input) => (input.checked = false));
+				// Uncheck all radio buttons and checkboxes
+				document.querySelectorAll("input[type=radio], input[type=checkbox]").forEach((input) => (input.checked = false));
 
 				// Show all solution items
 				document.querySelectorAll(".solution-item").forEach((li) => {
