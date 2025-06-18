@@ -4,23 +4,24 @@ A web application for the University of Waterloo that helps researchers find app
 
 ## Features
 
-- Interactive filtering system for research storage options
-- University of Waterloo branding and styling
-- Responsive design with Bootstrap
-- CSV data parsing with Papa Parse
-- Real-time search and filtering
+-   Interactive filtering system for research storage options
+-   University of Waterloo branding and styling
+-   Responsive design with Bootstrap
+-   CSV data parsing with Papa Parse
+-   Real-time search and filtering
 
 ## Deployment
 
 This is a static website that can be deployed to any web server. Simply upload all files to your web server directory.
 
 ### Required Files
-- `index.html` - Main application
-- `storage.csv` or `storage2.csv` - Data source
-- `papaparse.min.js` - CSV parsing library
-- `favicon.ico` - Site icon
-- `uwaterloo-logo.svg` - University logo
-- `logo.png` - Additional branding
+
+-   `index.html` - Main application
+-   `storage.csv` or `storage2.csv` - Data source
+-   `papaparse.min.js` - CSV parsing library
+-   `favicon.ico` - Site icon
+-   `uwaterloo-logo.svg` - University logo
+-   `logo.png` - Additional branding
 
 ## Usage
 
