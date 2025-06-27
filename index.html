@@ -432,7 +432,9 @@
 						}
 					}
 					qMap[q].push(opt);
-					optionIndex[opt] = i; // Store hover notes if available (use question + option as key to make unique)
+					// Use question + option as key to make it unique
+					optionIndex[q + "|" + opt] = i;
+					// Store hover notes if available (use question + option as key to make unique)
 					const hoverNote = row["Hover-over notes and comments"]?.trim();
 					if (hoverNote) {
 						hoverNotes[q + "|" + opt] = hoverNote;
@@ -443,10 +445,10 @@
 				solutions = Object.keys(data[0]).slice(4); // All columns after "Link to relevant site(s)"
 
 				// Build matrix
-				for (const [opt, rowIdx] of Object.entries(optionIndex)) {
-					matrix[opt] = {};
+				for (const [optKey, rowIdx] of Object.entries(optionIndex)) {
+					matrix[optKey] = {};
 					solutions.forEach((sol) => {
-						matrix[opt][sol] = parseInt(data[rowIdx][sol]) || 0;
+						matrix[optKey][sol] = parseInt(data[rowIdx][sol]) || 0;
 					});
 				}
 
@@ -490,7 +492,9 @@
 
 						const input = document.createElement("input");
 						input.type = isFacultyQuestion ? "checkbox" : "radio";
-						input.name = isFacultyQuestion ? "faculty" : "q" + qNum;
+						// Create a unique name based on the question text for radio buttons
+						const questionName = isFacultyQuestion ? "faculty" : "q_" + qText.replace(/[^a-zA-Z0-9]/g, "_").toLowerCase();
+						input.name = questionName;
 						input.value = opt;
 						input.className = "form-check-input";
 						input.id = "opt-" + qNum + "-" + optionIndex[opt]; // Unique ID
@@ -559,11 +563,12 @@
 			}
 
 			function updateResults() {
-				// Get regular radio button selections
-				const radioSelected = Array.from(document.querySelectorAll("input[type=radio]:checked")).map((input) => input.value);
+				// Get all checked radio and checkbox inputs
+				const checkedInputs = Array.from(document.querySelectorAll("input:checked"));
 
-				// Get faculty checkbox selections
-				const facultySelected = Array.from(document.querySelectorAll("input[name='faculty']:checked")).map((input) => input.value);
+				// Separate radio buttons from faculty checkboxes
+				const radioInputs = checkedInputs.filter((input) => input.type === "radio");
+				const facultyInputs = checkedInputs.filter((input) => input.name === "faculty");
 
 				const resultsContainer = document.getElementById("results").parentNode;
 				const resultItems = document.querySelectorAll(".solution-item");
@@ -573,12 +578,23 @@
 					const sol = li.dataset.solution;
 
 					// Check if all radio button selections match
-					const radioMatch = radioSelected.every((opt) => matrix[opt]?.[sol] === 1);
+					const radioMatch = radioInputs.every((input) => {
+						// Find the question text by looking at the input's parent structure
+						const questionDiv = input.closest(".question");
+						const questionText = questionDiv.querySelector("h3").textContent.trim();
+						const optKey = questionText + "|" + input.value;
+						return matrix[optKey]?.[sol] === 1;
+					});
 
 					// Check if at least one faculty selection matches (OR logic for faculties)
 					let facultyMatch = true; // Default to true if no faculty selected
-					if (facultySelected.length > 0) {
-						facultyMatch = facultySelected.some((opt) => matrix[opt]?.[sol] === 1);
+					if (facultyInputs.length > 0) {
+						facultyMatch = facultyInputs.some((input) => {
+							// Faculty checkboxes use the original simple key format
+							const questionText = "Are you affiliated with any of these faculties?";
+							const optKey = questionText + "|" + input.value;
+							return matrix[optKey]?.[sol] === 1;
+						});
 					}
 
 					const isMatch = radioMatch && facultyMatch;
@@ -605,7 +621,7 @@
 					newBadge.textContent = matchCount;
 					resultsHeader.querySelector("h2").appendChild(newBadge);
 				} // Show a message if no results
-				const totalSelections = radioSelected.length + facultySelected.length;
+				const totalSelections = radioInputs.length + facultyInputs.length;
 				if (matchCount === 0 && totalSelections > 0) {
 					const noResults = document.getElementById("no-results");
 					if (!noResults) {
