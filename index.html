@@ -470,13 +470,58 @@
 
 					// Add external link if available
 					if (questionLinks[qText]) {
-						const externalLink = document.createElement("a");
-						externalLink.href = questionLinks[qText];
-						externalLink.target = "_blank";
-						externalLink.rel = "noopener noreferrer";
-						externalLink.className = "external-link";
-						externalLink.textContent = "ℹ More Info";
-						headerDiv.appendChild(externalLink);
+						// Check if there are multiple links (separated by " | ")
+						const linkEntries = questionLinks[qText]
+							.split(" | ")
+							.map((entry) => entry.trim())
+							.filter((entry) => entry);
+
+						if (linkEntries.length > 1) {
+							// Multiple links - create container for all links
+							const linksContainer = document.createElement("div");
+							linksContainer.className = "d-flex gap-2 flex-wrap";
+
+							linkEntries.forEach((linkEntry, index) => {
+								const externalLink = document.createElement("a");
+
+								// Check if the entry contains URL~ButtonText format
+								if (linkEntry.includes("~")) {
+									const [url, buttonText] = linkEntry.split("~").map((part) => part.trim());
+									externalLink.href = url;
+									externalLink.textContent = `ℹ ${buttonText}`;
+								} else {
+									// Fallback to just URL
+									externalLink.href = linkEntry;
+									externalLink.textContent = `ℹ More Info ${index + 1}`;
+								}
+
+								externalLink.target = "_blank";
+								externalLink.rel = "noopener noreferrer";
+								externalLink.className = "external-link";
+
+								linksContainer.appendChild(externalLink);
+							});
+
+							headerDiv.appendChild(linksContainer);
+						} else {
+							// Single link - check for URL~ButtonText format
+							const externalLink = document.createElement("a");
+
+							if (questionLinks[qText].includes("~")) {
+								const [url, buttonText] = questionLinks[qText].split("~").map((part) => part.trim());
+								externalLink.href = url;
+								externalLink.textContent = `ℹ ${buttonText}`;
+							} else {
+								// Fallback to standard format
+								externalLink.href = questionLinks[qText];
+								externalLink.textContent = "ℹ More Info";
+							}
+
+							externalLink.target = "_blank";
+							externalLink.rel = "noopener noreferrer";
+							externalLink.className = "external-link";
+							headerDiv.appendChild(externalLink);
+						}
 					}
 
 					div.appendChild(headerDiv);
