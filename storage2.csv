@@ -21,8 +21,8 @@ Do you have access to an account to pay for charged storage?,Yes,,,1,1,1,1,1,1,1
 Do you have access to an account to pay for charged storage?,No,,,0,0,0,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1
 Are you actively working on the data in this storage?,Yes,,,0,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
 Are you actively working on the data in this storage?,No,,,1,0,1,0,0,0,1,1,1,0,0,1,1,1,1,1,1,0
-Do you have a high performance requirement (e.g., Databases and virtualization)?,Yes,Databases and virtualization,,0,1,0,0,0,0,1,1,0,0,0,1,0,1,0,1,1,0
-Do you have a high performance requirement (e.g., Databases and virtualization)?,No,General files,,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Do you have a high performance requirement?,"Yes (e.g., Databases and virtualization)",Databases and virtualization,,0,1,0,0,0,0,1,1,0,0,0,1,0,1,0,1,1,0
+Do you have a high performance requirement?,"No (e.g., General files)",General files,,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 Do you require system snapshots for older version recovery of files?,Yes,,,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Do you require system snapshots for older version recovery of files?,No,,,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
 Do you require Microsoft Office product files versioning?,Yes,,,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0
