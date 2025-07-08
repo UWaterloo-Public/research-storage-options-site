@@ -29,8 +29,8 @@ Do you require Microsoft Office product files versioning?,Yes,,,0,0,0,1,1,1,0,0,
 Do you require Microsoft Office product files versioning?,No,,,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 Do you require your data to exist in multiple data centres for high availability?,Yes,Some services may have additional costs,,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
 Do you require your data to exist in multiple data centres for high availability?,No,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0
-"Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",Yes,,https://uwaterloo.atlassian.net/servicedesk/customer/portal/2/group/410/create/318,0,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
-"Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",No,,https://uwaterloo.atlassian.net/servicedesk/customer/portal/2/group/410/create/319,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
+"Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",Yes,,,0,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
+"Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",No,,,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
 "Do you share or collaborate on your files with people who do not have a WatIAM account? (e.g., external people)",Yes,,,0,0,0,1,1,1,1,0,1,0,0,0,0,1,1,0,1,0
 "Do you share or collaborate on your files with people who do not have a WatIAM account? (e.g., external people)",No,,,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
 Is the data publicly accessible?,Yes,,,0,0,0,0,1,0,0,0,0,1,1,1,0,1,0,0,0,0
