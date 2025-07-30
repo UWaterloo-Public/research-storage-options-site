@@ -2,13 +2,13 @@ Question,Options,Hover-over notes and comments,Link to relevant site(s) for more
 Links,,,,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/42588209307/About+IST+backup+service,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/42583588985/Bulk+storage+purchasing,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/42583588985/Bulk+storage+purchasing,,,,,,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/44631558020/Wasabi+cloud+storage+request+page,https://borealisdata.ca/dataverse/waterloo,https://www.frdr-dfdr.ca/repo/,https://uwaterloo.ca/math-faculty-computing-facility/services/research-and-staff-file-storage,,https://uwaterloo.ca/computer-science-computing-facility/getting-help/help-desk,https://uwaterloo.ca/engineering-computing/,https://uwaterloo.ca/health-computing/,,https://uwaterloo.ca/science/about/people/scidesk
 Are you storing research data?,Yes,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 Are you storing research data?,No,,,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
-Are you affiliated with any of these faculties? (Select all that apply),Math,,,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0
-Are you affiliated with any of these faculties? (Select all that apply),Computer Science,,,1,1,1,1,1,1,1,1,1,1,1,0,0,1,0,0,0,0
-Are you affiliated with any of these faculties? (Select all that apply),Engineering,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,0
-Are you affiliated with any of these faculties? (Select all that apply),Health,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,0
-Are you affiliated with any of these faculties? (Select all that apply),Science,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1
-Are you affiliated with any of these faculties? (Select all that apply),Arts,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0
-Are you affiliated with any of these faculties? (Select all that apply),Environment,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0
+"Are you affiliated with any of these faculties? (Select all that apply)",Math,,,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0
+"Are you affiliated with any of these faculties? (Select all that apply)",Computer Science,,,1,1,1,1,1,1,1,1,1,1,1,0,0,1,0,0,0,0
+"Are you affiliated with any of these faculties? (Select all that apply)",Engineering,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,0
+"Are you affiliated with any of these faculties? (Select all that apply)",Health,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,0
+"Are you affiliated with any of these faculties? (Select all that apply)",Science,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1
+"Are you affiliated with any of these faculties? (Select all that apply)",Arts,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0
+"Are you affiliated with any of these faculties? (Select all that apply)",Environment,,,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0
 What is the data risk classification?,Low Risk / Public,Low,"https://uwaterloo.ca/information-systems-technology/about/policies-standards-and-guidelines/security/research-data-risk-classification-framework~Research Data Info | https://uwaterloo.ca/secretariat/policies-procedures-guidelines/policies/policy-46-information-management~Policy 46 Info",1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 What is the data risk classification?,Medium Risk / Confidential,Medium,"https://uwaterloo.ca/information-systems-technology/about/policies-standards-and-guidelines/security/research-data-risk-classification-framework~Research Data Info | https://uwaterloo.ca/secretariat/policies-procedures-guidelines/policies/policy-46-information-management~Policy 46 Info",1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
 What is the data risk classification?,High Risk / Restricted,High,"https://uwaterloo.ca/information-systems-technology/about/policies-standards-and-guidelines/security/research-data-risk-classification-framework~Research Data Info | https://uwaterloo.ca/secretariat/policies-procedures-guidelines/policies/policy-46-information-management~Policy 46 Info",1,1,1,1,1,1,"Contact Information Security Services, andriana.vanezi@uwaterloo.ca","Contact Information Security Services, andriana.vanezi@uwaterloo.ca","Contact Information Security Services, andriana.vanezi@uwaterloo.ca",0,0,1,1,1,1,1,1,1
