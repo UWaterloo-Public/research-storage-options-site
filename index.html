@@ -542,8 +542,9 @@
 						input.name = questionName;
 						input.value = opt;
 						input.className = "form-check-input";
-						input.id = "opt-" + qNum + "-" + optionIndex[opt]; // Unique ID
+						input.id = "opt-" + qNum + "-" + optionIndex[qText + "|" + opt]; // Unique ID using correct key
 						input.addEventListener("change", updateResults);
+
 						const label = document.createElement("label");
 						label.className = "form-check-label";
 						label.htmlFor = input.id; // Add tooltip if hover note exists (use question + option as key)
@@ -605,6 +606,9 @@
 				});
 
 				document.getElementById("resetBtn").addEventListener("click", resetForm);
+
+				// Apply initial filtering based on default selections
+				updateResults();
 			}
 
 			function updateResults() {
@@ -631,15 +635,35 @@
 						return matrix[optKey]?.[sol] === 1;
 					});
 
-					// Check if at least one faculty selection matches (OR logic for faculties)
-					let facultyMatch = true; // Default to true if no faculty selected
+					// Check faculty selection logic
+					let facultyMatch = true;
 					if (facultyInputs.length > 0) {
+						// When faculties are selected, solution must work for ANY selected faculty (OR logic)
 						facultyMatch = facultyInputs.some((input) => {
-							// Faculty checkboxes use the original simple key format
-							const questionText = "Are you affiliated with any of these faculties?";
+							const questionDiv = input.closest(".question");
+							const questionText = questionDiv.querySelector("h3").textContent.trim();
 							const optKey = questionText + "|" + input.value;
 							return matrix[optKey]?.[sol] === 1;
 						});
+					} else {
+						// When no faculties are selected, show only general solutions (those that work without faculty affiliation)
+						// A solution is "general" if it works for people regardless of faculty
+						// We'll check if it works for the basic university services (non-faculty specific)
+						const facultyQuestions = Object.keys(questions).filter((q) => q.includes("Are you affiliated with any of these faculties"));
+						if (facultyQuestions.length > 0) {
+							const facultyQuestion = facultyQuestions[0];
+							const allFacultyOptions = questions[facultyQuestion];
+
+							// Check if this solution is faculty-specific by seeing if it only works for specific faculties
+							const facultySpecificCount = allFacultyOptions.filter((faculty) => {
+								const optKey = facultyQuestion + "|" + faculty;
+								return matrix[optKey]?.[sol] === 1;
+							}).length;
+
+							// If it works for all faculties, it's a general solution
+							// If it works for some but not all, it might be faculty-specific
+							facultyMatch = facultySpecificCount === allFacultyOptions.length;
+						}
 					}
 
 					const isMatch = radioMatch && facultyMatch;
@@ -662,9 +686,9 @@
 					countBadge.textContent = matchCount;
 				} else if (matchCount > 0) {
 					const newBadge = document.createElement("span");
-					newBadge.className = "badge bg-primary ms-2 count-badge";
+					newBadge.className = "badge bg-success ms-2 count-badge";
 					newBadge.textContent = matchCount;
-					resultsHeader.querySelector("h2").appendChild(newBadge);
+					resultsHeader.querySelector("h3").appendChild(newBadge);
 				} // Show a message if no results
 				const totalSelections = radioInputs.length + facultyInputs.length;
 				if (matchCount === 0 && totalSelections > 0) {
@@ -686,12 +710,6 @@
 				// Uncheck all radio buttons and checkboxes
 				document.querySelectorAll("input[type=radio], input[type=checkbox]").forEach((input) => (input.checked = false));
 
-				// Show all solution items
-				document.querySelectorAll(".solution-item").forEach((li) => {
-					li.classList.remove("hidden", "border", "border-success");
-					li.querySelector(".badge").className = "badge bg-success me-2";
-				});
-
 				// Remove count badge
 				const countBadge = document.querySelector(".count-badge");
 				if (countBadge) countBadge.remove();
@@ -699,6 +717,9 @@
 				// Remove no results message
 				const noResults = document.getElementById("no-results");
 				if (noResults) noResults.remove();
+
+				// Apply filtering logic after reset (this will show appropriate solutions based on no selections)
+				updateResults();
 
 				// Visual feedback for reset button
 				const resetBtn = document.getElementById("resetBtn");
