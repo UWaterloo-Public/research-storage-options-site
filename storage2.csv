@@ -33,7 +33,8 @@ Do you require your data to have high availability (exist in multiple data centr
 "Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",No,,,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1
 "Do you share or collaborate on your files with people who do not have a WatIAM account? (e.g., external people)",Yes,,,0,0,0,1,1,1,1,0,1,0,0,0,0,1,1,0,1,0
 "Do you share or collaborate on your files with people who do not have a WatIAM account? (e.g., external people)",No,,,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
-Is the data publicly accessible?,Yes,,,0,0,0,0,1,0,0,0,0,1,1,1,0,1,0,0,0,0
-Is the data publicly accessible?,No,,,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
+Does the data need to be publicly accessible?,Yes,,,0,0,0,0,1,0,0,0,0,1,1,1,0,1,0,0,0,0
+Does the data need to be publicly accessible?,No,,,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
+
 
 
