@@ -21,20 +21,21 @@ Do you have a budget to pay for charged stroage?,Yes,,,1,1,1,1,1,1,1,1,1,1,1,1,1
 Do you have a budget to pay for charged stroage?,No,,,0,0,0,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1
 Are you actively working on the data in this storage?,Yes,,,0,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
 Are you actively working on the data in this storage?,No,,,1,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0
-Do you have a high performance requirement?,"Yes (e.g., Databases and server virtualization)",Databases and server virtualization,,0,1,0,0,0,0,1,1,0,0,0,1,0,1,0,1,1,0
-Do you have a high performance requirement?,"No (e.g., General files)",General files,,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-Do you require system snapshots for older version recovery of files?,Yes,,,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Do you have a high performance requirement?,"Yes (e.g., Databases and server virtualization)","High performance: Storage that delivers fast data access and transfer speeds, ideal for demanding workloads like databases, analytics, or media editing.",,0,1,0,0,0,0,1,1,0,0,0,1,0,1,0,1,1,0
+Do you have a high performance requirement?,"No (e.g., General files)","General files: Common types of files such as documents, spreadsheets, images, and videos that don’t require special handling or performance—used in everyday work.",,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Do you require system snapshots for older version recovery of files?,Yes,"System snapshots: Point-in-time copies of data stored in the system, used for backup, recovery, or cloning without affecting the original data.",,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Do you require system snapshots for older version recovery of files?,No,,,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
-Do you require Microsoft Office product files versioning?,Yes,,,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0
+Do you require Microsoft Office product files versioning?,Yes,"File versioning: A feature that keeps multiple versions of a file as it changes over time, allowing users to restore or review earlier versions.",,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0
 Do you require Microsoft Office product files versioning?,No,,,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-Do you require your data to have high availability (exist in multiple data centres)?,Yes,Some services may have additional costs,,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
+Do you require your data to have high availability (exist in multiple data centres)?,Yes,"High availability: A setup that ensures storage services remain accessible even during hardware failures or maintenance, often using redundancy and failover systems.  Some services may have additional costs",,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
 Do you require your data to have high availability (exist in multiple data centres)?,No,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0
-"Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",Yes,,,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1
+"Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",Yes,"Sponsored account: You can create (via request) watiam credentials for NON-UW staff in order for them to be able to access shared resources",,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1
 "Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",No,,,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1
 "Do you share or collaborate on your files with people who do not have a WatIAM account? (e.g., external people)",Yes,,,0,0,0,1,1,1,1,0,1,0,0,0,0,1,1,0,1,0
 "Do you share or collaborate on your files with people who do not have a WatIAM account? (e.g., external people)",No,,,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
 Does the data need to be publicly accessible?,Yes,,,0,0,0,0,1,0,0,0,0,1,1,1,0,1,0,0,0,0
 Does the data need to be publicly accessible?,No,,,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
+
 
 
 
