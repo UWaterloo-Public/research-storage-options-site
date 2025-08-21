@@ -29,12 +29,13 @@ Do you require Microsoft Office product files versioning?,Yes,"keeps multiple ve
 Do you require Microsoft Office product files versioning?,No,,,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 Do you require your data to have high availability (exist in multiple data centres)?,Yes,"redundancy and failover systems are needed, some services may have additional costs",,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
 Do you require your data to have high availability (exist in multiple data centres)?,No,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0
-"Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",Yes,"Sponsored Account: watiam credentials for NON-UW staff",,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1
-"Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",No,,,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1
+"Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",Yes,"Sponsored Account: watiam credentials for NON-UW staff","https://uwaterloo.atlassian.net/wiki/spaces/ISTKB/pages/44542722066/WatIAM+Sponsored+Accounts+Microsoft+365+Licensing~Sponsored Accounts",0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1
+"Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",No,,"https://uwaterloo.atlassian.net/wiki/spaces/ISTKB/pages/44542722066/WatIAM+Sponsored+Accounts+Microsoft+365+Licensing~Sponsored Accounts",1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1
 "Do you share or collaborate on your files with people who do not have a WatIAM account? (e.g., external people)",Yes,,,0,0,0,1,1,1,1,0,1,0,0,0,0,1,1,0,1,0
 "Do you share or collaborate on your files with people who do not have a WatIAM account? (e.g., external people)",No,,,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
 Does the data need to be publicly accessible?,Yes,,,0,0,0,0,1,0,0,0,0,1,1,1,0,1,0,0,0,0
 Does the data need to be publicly accessible?,No,,,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
+
 
 
 
