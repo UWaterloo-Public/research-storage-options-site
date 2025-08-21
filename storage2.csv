@@ -21,13 +21,13 @@ Do you have a budget to pay for charged stroage?,Yes,,,1,1,1,1,1,1,1,1,1,1,1,1,1
 Do you have a budget to pay for charged stroage?,No,,,0,0,0,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1
 Are you actively working on the data in this storage?,Yes,,,0,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
 Are you actively working on the data in this storage?,No,,,1,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0
-Do you have a high performance requirement?,"Yes (e.g., Databases and server virtualization)","fast data access and transfer speeds, for demanding workloads and computing",,0,1,0,0,0,0,1,1,0,0,0,1,0,1,0,1,1,0
-Do you have a high performance requirement?,"No (e.g., General files)","documents, spreadsheets, images, and videos for everyday work.",,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Do you have a high performance requirement?,"Yes (e.g., Databases and server virtualization)","Fast data access and transfer speeds, for demanding workloads and computing",,0,1,0,0,0,0,1,1,0,0,0,1,0,1,0,1,1,0
+Do you have a high performance requirement?,"No (e.g., General files)","Documents, spreadsheets, images, and videos for everyday work.",,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 Do you require system snapshots for older version recovery of files?,Yes,"Point-in-time copies of data used for backup",,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 Do you require system snapshots for older version recovery of files?,No,,,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
-Do you require Microsoft Office product files versioning?,Yes,"keeps multiple versions of a file as it changes over time",,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0
+Do you require Microsoft Office product files versioning?,Yes,"Keeps multiple versions of a file as it changes over time",,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0
 Do you require Microsoft Office product files versioning?,No,,,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-Do you require your data to have high availability (exist in multiple data centres)?,Yes,"redundancy and failover systems are needed, some services may have additional costs",,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
+Do you require your data to have high availability (exist in multiple data centres)?,Yes,"Redundancy and failover systems are needed, some services may have additional costs",,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
 Do you require your data to have high availability (exist in multiple data centres)?,No,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0
 "Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",Yes,"Sponsored Account: watiam credentials for NON-UW staff","https://uwaterloo.atlassian.net/wiki/spaces/ISTKB/pages/44542722066/WatIAM+Sponsored+Accounts+Microsoft+365+Licensing~Sponsored Accounts",0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1
 "Do you share or collaborate on your files with people who have WatIAM accounts (e.g., staff/faculty/student/sponsored accounts)?",No,,"https://uwaterloo.atlassian.net/wiki/spaces/ISTKB/pages/44542722066/WatIAM+Sponsored+Accounts+Microsoft+365+Licensing~Sponsored Accounts",1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1
@@ -35,6 +35,7 @@ Do you require your data to have high availability (exist in multiple data centr
 "Do you share or collaborate on your files with people who do not have a WatIAM account? (e.g., external people)",No,,,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
 Does the data need to be publicly accessible?,Yes,,,0,0,0,0,1,0,0,0,0,1,1,1,0,1,0,0,0,0
 Does the data need to be publicly accessible?,No,,,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
+
 
 
 
