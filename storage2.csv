@@ -17,8 +17,8 @@ How much storage do you need?,100 GB or less,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 How much storage do you need?,100 GB to 5 TB,,,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 How much storage do you need?,5 Tb to 25 TB,,,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 How much storage do you need?,Over 25 TB,,,1,1,1,0,0,0,1,1,1,1,1,0,1,1,1,0,0,0
-Do you have a budget to pay for charged stroage?,Yes,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0
-Do you have a budget to pay for charged stroage?,No,,,0,0,0,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1
+Do you have a budget to pay for charged storage?,Yes,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0
+Do you have a budget to pay for charged storage?,No,,,0,0,0,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1
 Are you actively working on the data in this storage?,Yes,,,0,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
 Are you actively working on the data in this storage?,No,,,1,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0
 Do you have a high performance requirement?,"Yes (e.g., Databases and server virtualization)","Fast data access and transfer speeds, for demanding workloads and computing",,0,1,0,0,0,0,1,1,0,0,0,1,0,1,0,1,1,0
@@ -35,6 +35,7 @@ Do you require your data to have high availability (exist in multiple data centr
 "Do you share or collaborate on your files with people who do not have a WatIAM account? (e.g., external people)",No,,,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
 Does the data need to be publicly accessible?,Yes,,,0,0,0,0,1,0,0,0,0,1,1,1,0,1,0,0,0,0
 Does the data need to be publicly accessible?,No,,,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
+
 
 
 
