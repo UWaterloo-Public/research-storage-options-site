@@ -1,5 +1,5 @@
 Question,Options,Hover-over notes and comments,Link to relevant site(s) for more information,IST data backup service,Performance campus storage,Capacity campus storage ,OneDrive ,SharePoint ,MS Teams,"Public cloud (AWS, GCP, MS Azure)",Public cloud (UW MS Azure Storage) ,Public cloud - Wasabi,UW Dataverse (Borealis),Federated Research Data Repository (FRDR)  ,Math NetApp Storage,Math QNAP Storage,CSCF storage,Engineering storage,Health Research Drive storage,HealthCloud Storage,Science Storage
-Links,,,,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/42588209307/About+IST+backup+service,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/42583588985/Bulk+storage+purchasing,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/42583588985/Bulk+storage+purchasing,,,,,,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/44631558020/Wasabi+cloud+storage+request+page,https://borealisdata.ca/dataverse/waterloo,https://www.frdr-dfdr.ca/repo/,https://uwaterloo.ca/math-faculty-computing-facility/services/research-and-staff-file-storage,,https://uwaterloo.ca/computer-science-computing-facility/getting-help/help-desk,https://uwaterloo.ca/engineering-computing/,https://uwaterloo.ca/health-computing/,,https://uwaterloo.ca/science/about/people/scidesk
+Links,,,,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/42588209307/About+IST+backup+service,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/42583588985/Bulk+storage+purchasing,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/42583588985/Bulk+storage+purchasing,https://uwaterloo.atlassian.net/wiki/spaces/ISTKB/pages/44625691116/Microsoft+365+storage+quotas+and+information,https://uwaterloo.atlassian.net/wiki/spaces/ISTKB/pages/44625691116/Microsoft+365+storage+quotas+and+information,https://uwaterloo.atlassian.net/wiki/spaces/ISTKB/pages/44625691116/Microsoft+365+storage+quotas+and+information,,,https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/44631558020/Wasabi+cloud+storage+request+page,https://borealisdata.ca/dataverse/waterloo,https://www.frdr-dfdr.ca/repo/,https://uwaterloo.ca/math-faculty-computing-facility/services/research-and-staff-file-storage,,https://uwaterloo.ca/computer-science-computing-facility/getting-help/help-desk,https://uwaterloo.ca/engineering-computing/,https://uwaterloo.ca/health-computing/,,https://uwaterloo.ca/science/about/people/scidesk
 Are you storing research data?,Yes,,"https://subjectguides.uwaterloo.ca/rdm/glossary~RDM Glossary",1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 Are you storing research data?,No,,"https://subjectguides.uwaterloo.ca/rdm/glossary~RDM Glossary",1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
 Are you affiliated with any of these faculties? (Select all that apply),Math,,,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0
@@ -15,7 +15,7 @@ What is the data risk classification?,High Risk / Restricted,High,"https://uwate
 What is the data risk classification?,Very High / Highly Restricted,Very High,"https://uwaterloo.ca/information-systems-technology/about/policies-standards-and-guidelines/security/research-data-risk-classification-framework~Research Data Info | https://uwaterloo.ca/secretariat/policies-procedures-guidelines/policies/policy-46-information-management~Policy 46 Info",1,1,1,"Contact Information Security Services, andriana.vanezi@uwaterloo.ca","Contact Information Security Services, andriana.vanezi@uwaterloo.ca","Contact Information Security Services, andriana.vanezi@uwaterloo.ca",0,"Contact Information Security Services, andriana.vanezi@uwaterloo.ca",0,0,0,1,1,1,0,0,0,0
 How much storage do you need?,100 GB or less,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 How much storage do you need?,100 GB to 5 TB,,,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-How much storage do you need?,5 Tb to 25 TB,,,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+How much storage do you need?,5 TB to 25 TB,,,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 How much storage do you need?,Over 25 TB,,,1,1,1,0,0,0,1,1,1,1,1,0,1,1,1,0,0,0
 Do you have a budget to pay for charged storage?,Yes,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0
 Do you have a budget to pay for charged storage?,No,,,0,0,0,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1
@@ -35,6 +35,7 @@ Do you require your data to have high availability (exist in multiple data centr
 "Do you share or collaborate on your files with people who do not have a WatIAM account? (e.g., external people)",No,,,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
 Does the data need to be publicly accessible?,Yes,,,0,0,0,0,1,0,0,0,0,1,1,1,0,1,0,0,0,0
 Does the data need to be publicly accessible?,No,,,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
+
 
 
 
