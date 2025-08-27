@@ -14,8 +14,8 @@ What is the data risk classification?,Medium Risk / Confidential,Medium,"https:/
 What is the data risk classification?,High Risk / Restricted,High,"https://uwaterloo.ca/information-systems-technology/about/policies-standards-and-guidelines/security/research-data-risk-classification-framework~Research Data Info | https://uwaterloo.ca/secretariat/policies-procedures-guidelines/policies/policy-46-information-management~Policy 46 Info",1,1,1,1,1,1,"Contact Information Security Services, andriana.vanezi@uwaterloo.ca","Contact Information Security Services, andriana.vanezi@uwaterloo.ca","Contact Information Security Services, andriana.vanezi@uwaterloo.ca",0,0,1,1,1,1,1,1,1
 What is the data risk classification?,Very High / Highly Restricted,Very High,"https://uwaterloo.ca/information-systems-technology/about/policies-standards-and-guidelines/security/research-data-risk-classification-framework~Research Data Info | https://uwaterloo.ca/secretariat/policies-procedures-guidelines/policies/policy-46-information-management~Policy 46 Info",1,1,1,"Contact Information Security Services, andriana.vanezi@uwaterloo.ca","Contact Information Security Services, andriana.vanezi@uwaterloo.ca","Contact Information Security Services, andriana.vanezi@uwaterloo.ca",0,"Contact Information Security Services, andriana.vanezi@uwaterloo.ca",0,0,0,1,1,1,0,0,0,0
 How much storage do you need?,100 GB or less,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-How much storage do you need?,100 GB to 5 TB,,,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-How much storage do you need?,5 TB to 25 TB,,,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+How much storage do you need?,100 GB to 1 TB,,,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+How much storage do you need?,1 TB to 25 TB,,,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 How much storage do you need?,Over 25 TB,,,1,1,1,0,0,0,1,1,1,1,1,0,1,1,1,0,0,0
 Do you have a budget to pay for charged storage?,Yes,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0
 Do you have a budget to pay for charged storage?,No,,,0,0,0,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1
@@ -35,6 +35,7 @@ Do you require your data to have high availability (exist in multiple data centr
 "Do you share or collaborate on your files with people who do not have a WatIAM account? (e.g., external people)",No,,,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
 Does the data need to be publicly accessible?,Yes,,,0,0,0,0,1,0,0,0,0,1,1,1,0,1,0,0,0,0
 Does the data need to be publicly accessible?,No,,,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
+
 
 
 
