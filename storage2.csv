@@ -19,7 +19,7 @@ How much storage do you need?,100 GB to 1 TB,,,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1
 How much storage do you need?,1 TB to 25 TB,,,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 How much storage do you need?,Over 25 TB,,,1,1,1,0,0,0,1,1,1,1,1,0,1,1,1,0,0,0
 Do you have a budget to pay for charged storage?,Yes,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0
-Do you have a budget to pay for charged storage?,No,,,0,0,0,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1
+Do you have a budget to pay for charged storage?,No,,,0,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1
 Are you actively working on the data in this storage?,Yes,,,0,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1
 Are you actively working on the data in this storage?,No,,,1,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0
 Do you have a high performance requirement?,"Yes (e.g., Databases and server virtualization)","Fast data access and transfer speeds, for demanding workloads and computing",,0,1,0,0,0,0,1,1,0,0,0,1,0,1,0,1,1,0
