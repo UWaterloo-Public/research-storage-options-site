@@ -25,7 +25,7 @@ Are you actively working on the data in this storage?,No,,,1,0,1,1,0,0,0,1,1,1,1
 Do you have a high performance requirement?,"Yes (e.g., Databases and server virtualization)","Fast data access and transfer speeds, for demanding workloads and computing",,0,1,0,0,0,0,0,1,1,0,0,0,1,0,1,0,1,1,0
 Do you have a high performance requirement?,"No (e.g., General files)","Documents, spreadsheets, images, and videos for everyday work.",,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 Do you require system snapshots for older version recovery of files?,Yes,Point-in-time copies of data used for backup,,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Do you require system snapshots for older version recovery of files?,No,,,0,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
+Do you require system snapshots for older version recovery of files?,No,,,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
 Do you require Microsoft Office product files versioning?,Yes,Keeps multiple versions of a file as it changes over time,,0,0,0,1,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0
 Do you require Microsoft Office product files versioning?,No,,,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 Do you require your data to have high availability (exist in multiple data centres)?,Yes,"Redundancy and failover systems are needed, some services may have additional costs",,1,1,1,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1
